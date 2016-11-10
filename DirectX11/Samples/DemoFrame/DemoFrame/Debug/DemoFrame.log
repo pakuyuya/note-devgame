@@ -1,0 +1,9 @@
+﻿  main.cpp
+  Generating Code...
+  Compiling...
+  AppEngine.cpp
+e:\toybox\note-devgame\directx11\samples\demoframe\demoframe\appengine.cpp(6): warning C4114: same type qualifier used more than once
+e:\toybox\note-devgame\directx11\samples\demoframe\demoframe\appengine.cpp(160): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+e:\toybox\note-devgame\directx11\samples\demoframe\demoframe\appengine.cpp(261): warning C4189: 'dw': local variable is initialized but not referenced
+  Generating Code...
+  DemoFrame.vcxproj -> E:\toybox\note-devgame\DirectX11\Samples\DemoFrame\Debug\DemoFrame.exe

@@ -451,13 +451,15 @@ void AppEngine::update(double time, double elapsedTime) {
     if (time - m_lastFrameExecuteTime >= 1.0 / static_cast<double>(m_config.FPSlimit)) {
         m_frameTimePassed = true;
     }
+
+    m_units.onUpdate(time, elapsedTime);
 }
 
 void AppEngine::updateOnFrame(double time, double elapsedTime) {
     UNUSED(time);
     UNUSED(elapsedTime);
-
-    // TODO: コンポーネントの初期化処理
+    
+    m_units.onFrameUpdate(time, elapsedTime);
 }
 
 void AppEngine::render(double time, double elapsedTime) {
@@ -467,6 +469,7 @@ void AppEngine::render(double time, double elapsedTime) {
     m_pDeviceContext->OMSetRenderTargets(1, &m_pRenderTargetView, m_pDepthStencilView);
     m_pDeviceContext->ClearRenderTargetView(m_pRenderTargetView, m_config.clearColor);
 
+    m_units.onRender(time, elapsedTime);
         
     m_pSwapChain->Present(0, 0);
 }

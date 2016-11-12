@@ -7,6 +7,7 @@
 
 #include "Timer.hpp"
 #include "AppEngineConfig.hpp"
+#include "FrameExcutableObserver.hpp"
 
 namespace {
     const int AE_SUCCESS = S_OK;
@@ -50,8 +51,9 @@ private:
     tstring m_lastError; //!< 最後のエラーメッセージ
 
     double m_lastFrameExecuteTime; //!< 最後にframeを処理した時間
-    bool m_frameTimePassed = true; //!<
+    bool m_frameTimePassed = true; //!< 次のフレームを処理する時間を過ぎたか
 	
+    FrameExcutableObserver m_units; //!< 描画コンポーネント
 public:
     /**
      * コンストラクタです。
@@ -68,6 +70,10 @@ private:
      * このコンストラクタを禁止します
      */
     AppEngine(const AppEngine&);
+
+    /**
+     * この演算子を禁止します
+     */
     bool operator= (const AppEngine&);
 
 public:
